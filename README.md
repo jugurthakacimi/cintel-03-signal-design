@@ -129,3 +129,9 @@ git push -u origin main
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
 - Use `CTRL+f` to find (and replace) text within a file.
+
+
+## Technical Modification
+**Latency Spike Detection**
+
+Added a latency_spike boolean signal that flags any observation where the average latency per request exceeds 30ms. Rows with zero requests are safely defaulted to ``False``. The threshold is defined as a named constant ``LATENCY_SPIKE_THRESHOLD_MS`` for easy adjustment.
